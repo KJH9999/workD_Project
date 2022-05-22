@@ -3,15 +3,12 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="UTF-8"%>
 <html>
-<head>
-	<title>Home</title>
-</head>
-<body>
-<h1>WORKD</h1>
-<a href="login">로그인 </a><br/><br/>
-<a href="join">회원가입 </a><br/><br/>
-<a href="userlist">회원모음</a><br/><br/>
-<a href="board">게시판</a><br/><br/>
-<a href="question">문의</a><br/><br/>
-</body>   
+	<head>
+		<title>Home</title>
+		<link rel='stylesheet' type="text/css" href="${pageContext.request.contextPath}/resources/styles/common/global.css"/>
+		<link rel='stylesheet' type="text/css" href="${pageContext.request.contextPath}/resouces/styles/common/home.css"/>
+	</head>
+	<body>
+		<jsp:include page="/WEB-INF/views/common/header.jsp" />
+	</body>   
 </html>
