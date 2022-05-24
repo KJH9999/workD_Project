@@ -25,7 +25,6 @@
 						<div class="dropdown">
 							<span class="text">
 								커뮤니티
-								<div></div>
 							</span>
 							<ul class="list">
 								<li>게시판</li>
@@ -36,7 +35,6 @@
 						<div class="dropdown">
 							<span class="text">
 								등록/문의
-								<div></div>
 							</span>
 							<ul class="list">
 								<li>등록하기</li>
@@ -46,7 +44,6 @@
 						<div class="dropdown">
 							<span class="text">
 								이용안내
-								<div></div>
 							</span>
 							<ul class="list">
 								<li>시간표</li>
@@ -58,7 +55,6 @@
 						<div class="dropdown">
 							<span class="text">
 								로그인
-								<div></div>
 							</span>
 							<ul class="list">
 								<li>내 정보</li>
