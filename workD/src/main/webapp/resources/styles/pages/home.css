@@ -1,3 +1,15 @@
+main {
+	padding : 0 100px;
+}
+
+section {
+	
+}
+
+#ImageSlider {
+	margin-bottom: 30px;
+}
+
 .carousel-item {
 	width : 100%;
 }
@@ -7,17 +19,19 @@
 	object-fit: cover;
 }
 
-section {
-	display: flex;
-	flex-wrap : wrap;
-}
-
 .content-wrapper > article {
 	display : flex;
-	flex : 1 0 0;
+	flex : 0 0 auto;
 	justify-content : center;
 	align-items: center;
-	
-	height : 300px;
 	border: 1px solid black;
+	min-width: 600px;
+	height : 400px;
+	margin-bottom: 20px;
+}
+
+#map {
+	width: 400px;
+	height: 396px;
+	flex : 0 0 auto;
 }
