@@ -1,0 +1,37 @@
+main {
+	padding : 0 100px;
+}
+
+section {
+	
+}
+
+#ImageSlider {
+	margin-bottom: 30px;
+}
+
+.carousel-item {
+	width : 100%;
+}
+
+.carousel-item > img {
+	height: 600px;
+	object-fit: cover;
+}
+
+.content-wrapper > article {
+	display : flex;
+	flex : 0 0 auto;
+	justify-content : center;
+	align-items: center;
+	border: 1px solid black;
+	min-width: 600px;
+	height : 400px;
+	margin-bottom: 20px;
+}
+
+#map {
+	width: 400px;
+	height: 396px;
+	flex : 0 0 auto;
+}
