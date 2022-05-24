@@ -2,6 +2,7 @@ header {
 	width: 100%;
 	position: sticky;
 	padding : 20px 60px;
+	z-index : 1000;
 }
 
 header > div {
@@ -12,6 +13,7 @@ header > div {
 header .logo-wrapper {
 	width: 250px;
 	flex: 0 0 auto;
+	cursor : pointer;
 }
 
 header .logo-wrapper > .sns-wrapper {
