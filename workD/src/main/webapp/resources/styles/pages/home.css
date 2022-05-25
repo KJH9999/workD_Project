@@ -1,3 +1,8 @@
+@font-face {
+	src : url("../../fonts/YouandiNewKrTitle-Bold.woff2");
+	font-family : "YouandiNewKrHEB";
+}
+
 main {
 	padding : 0 100px;
 }
@@ -20,14 +25,24 @@ section {
 }
 
 .content-wrapper > article {
-	display : flex;
-	flex : 0 0 auto;
-	justify-content : center;
-	align-items: center;
-	border: 1px solid black;
 	min-width: 600px;
 	height : 400px;
 	margin-bottom: 20px;
+}
+
+.content-wrapper .title {
+	display : flex;
+	width : 100%;
+	padding : 10px;
+	line-height : 40px;
+	border-bottom: 1px solid gray;
+	justify-content : space-between;
+}
+
+.content-wrapper .title > span {
+	font-size : 20px;
+	font-weight: 700;
+	font-family	: 'YouandiNewKrHEB';
 }
 
 #map {
