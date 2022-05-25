@@ -21,28 +21,28 @@ public class BoardServiceImp implements BoardService{
 	@Inject
 	BoardDAO boardDAO;
 	
-	@Override
-	public List<UserDTO> boardlist() {
-		return null;
-	}
 
 
 	@Override
 	public void insertBoard(Model model) {
 		Map<String, Object> map = model.asMap();
 		HttpServletRequest request = (HttpServletRequest) map.get("request");
+		
 		String email = request.getParameter("email");
+		String title = request.getParameter("title");
+		String content = request.getParameter("content");
+		String hit = request.getParameter("hit");
 		
-		System.out.println("S"+email);
+		System.out.println("S"+email+title+content+hit);
 		
-		boardDAO.insertBoard(email);
+		boardDAO.insertBoard(email,title,content,hit);
 	}
 
 	@Override
-	public void write(Model model) {
-		// TODO Auto-generated method stub
-		
+	public List<UserDTO> boardList() {
+		return boardDAO.boardlist();
 	}
+
 
 
 }

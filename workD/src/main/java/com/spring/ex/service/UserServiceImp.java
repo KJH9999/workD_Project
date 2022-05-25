@@ -72,19 +72,19 @@ public class UserServiceImp implements UserService{
 		userDAO.updatePw(email,pw);
 	}
 
-//	@Override
-//	public void updateOther(Model model) {
-//		Map<String, Object> map = model.asMap();
-//		HttpServletRequest request = (HttpServletRequest) map.get("request");
-//		String email = request.getParameter("email");
-//		String name = request.getParameter("name");
-//		String num = request.getParameter("num");
-//		
-//		System.out.println("s : " + email + " "+ name + " "+ num);
-//		  
-//		userDAO.updateOther(email,name,num);
-//		
-//	}
+	@Override
+	public void updateOther(Model model) {
+		Map<String, Object> map = model.asMap();
+		HttpServletRequest request = (HttpServletRequest) map.get("request");
+		String email = request.getParameter("email");
+		String name = request.getParameter("name");
+		String num = request.getParameter("num");
+		
+		System.out.println("s : " + email + " "+ name + " "+ num);
+		  
+		userDAO.updateOther(email,name,num);
+		
+	}
 
 
 		

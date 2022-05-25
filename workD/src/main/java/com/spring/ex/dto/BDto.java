@@ -13,7 +13,6 @@ public class BDto {
 	private int bStep;
 	private int bIndent;
 
-////	 Default ������
 	public BDto() {
 
 	}

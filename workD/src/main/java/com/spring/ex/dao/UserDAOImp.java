@@ -81,16 +81,16 @@ public class UserDAOImp implements UserDAO {
 		sqlSession.update("user.updatePw", map);
 	}
 
-//	@Override
-//	public void updateOther(String email, String name, String num) {
-//		HashMap<String, String> map = new HashMap<String, String>();
-//		map.put("email", email);		
-//		map.put("name", name);		
-//		map.put("num", num);		
-//		
-//		System.out.println("DAO : " + email +name + num);
-//		sqlSession.update("user.updateOther", map);		
-//	}
+	@Override
+	public void updateOther(String email, String name, String num) {
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put("email", email);		
+		map.put("name", name);		
+		map.put("num", num);		
+		
+		System.out.println("DAO : " + email +name + num);
+		sqlSession.update("user.updateOther", map);		
+	}
 
 
 

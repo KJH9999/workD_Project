@@ -13,6 +13,6 @@ public interface UserDAO {
 	public int loginUser(String email, String pw);
 	public List<UserDTO> findname(String email);
 	public void updatePw(String email, String pw);
-//	public void updateOther(String email, String name, String num);
+	public void updateOther(String email, String name, String num);
 
 }

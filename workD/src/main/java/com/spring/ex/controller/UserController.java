@@ -111,13 +111,13 @@ public class UserController {
 		return "home";
 	}
 	
-//	@RequestMapping("updateOtherOk")
-//	public String update_otherOK(HttpServletRequest request, Model model) {
-//		System.out.println("updateOtherOk()");
-//		model.addAttribute("request", request);
-//		userService.updateOther(model);
-//		return "loginok";
-//	}
+	@RequestMapping("updateOtherOk")
+	public String update_otherOK(HttpServletRequest request, Model model) {
+		System.out.println("updateOtherOk()");
+		model.addAttribute("request", request);
+		userService.updateOther(model);
+		return "loginok";	
+		}
 
 
 }

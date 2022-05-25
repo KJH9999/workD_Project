@@ -11,11 +11,9 @@ import com.spring.ex.dto.UserDTO;
 @Repository 
 public interface BoardService {
 	
-	//게시판 리스트
-	public List<UserDTO> boardlist();
 	//글쓰기
 	public void insertBoard(Model model);
-	//
-	public void write(Model model);
+
+	public List<UserDTO> boardList();
 
 }

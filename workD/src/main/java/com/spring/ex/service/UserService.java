@@ -22,7 +22,7 @@ public interface UserService {
 	//비번수정
 	public void updatePw(Model model);
 	//정보수정
-//	public void updateOther(Model model);
+	public void updateOther(Model model);
 	
 	
 	

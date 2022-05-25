@@ -17,26 +17,16 @@ public class BoardController {
 	@Inject
 	BoardService boardService;
 	 
-	
-	///////////////////////////////////////////////////////// °Ô½ÃÆÇ
-
 	@RequestMapping("board")
 	public String board(HttpServletRequest request, Model model) {
-		System.out.println("write()");
+		System.out.println("board()");
+		List<UserDTO> boardlist = boardService.boardList();
 		model.addAttribute("request", request);
-		boardService.write(model);
-
-		return "list";
+		model.addAttribute("boardlist", boardlist);
+		
+		return "board";
 	}
 
-	@RequestMapping("Blist")
-	public String list(Model model) {
-		System.out.println("boardlist()");
-		List<UserDTO> boardList = boardService.boardlist();
-		model.addAttribute("boardlist", boardList);
-		return "Blist";
-	}
-	
 	@RequestMapping("writeview")
 	public String board(Model model) {
 		System.out.println("write_board()");
