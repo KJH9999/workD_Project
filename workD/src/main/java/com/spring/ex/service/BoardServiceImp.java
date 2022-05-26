@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -39,10 +40,20 @@ public class BoardServiceImp implements BoardService{
 	}
 
 	@Override
-	public List<UserDTO> boardList() {
+	public List<BoardDTO> boardList() {
 		return boardDAO.boardlist();
 	}
 
+	@Override
+	public void increaseViewcnt(int idx) {
+		boardDAO.increaseHit(idx);
+	}
+
+	@Override
+	public List<BoardDTO> read(int idx) {
+		System.out.println("read > s = "+idx);
+		return boardDAO.read(idx);
+	}
 
 
 }

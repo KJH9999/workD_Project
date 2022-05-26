@@ -13,5 +13,15 @@
 		VALUES(#{email}, #{title}, #{content},#{hit})
 	</insert>
 	
-
+	<update id="increaseView">
+		UPDATE board set hit = hit + 1
+		WHERE idx = #{idx}
+	</update>
+	
+	<select id = "read" resultType="BoardDTO">
+		SELECT *
+		FROM board
+		WHERE idx = #{idx}
+	</select>
+	
 </mapper>

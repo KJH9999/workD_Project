@@ -30,7 +30,7 @@
 			<tr>
 			<td>${boardlist.idx}</td>
 			<td>
-				  <a href="contentview?bId=${boardlist.idx }"> ${boardlist.title}</a>
+				  <a href="contentView.do?idx=${boardlist.idx}"> ${boardlist.title}</a>
 			</td>
 			<td>${boardlist.email}</td>
 			<td>${boardlist.at_time}</td>

@@ -2,6 +2,8 @@ package com.spring.ex.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 
@@ -13,7 +15,11 @@ public interface BoardService {
 	
 	//글쓰기
 	public void insertBoard(Model model);
-
-	public List<UserDTO> boardList();
+	//list
+	public List<BoardDTO> boardList();
+	//상세
+	public List<BoardDTO> read(int idx);
+	//조회수 증가
+	void increaseViewcnt(int idx);
 
 }

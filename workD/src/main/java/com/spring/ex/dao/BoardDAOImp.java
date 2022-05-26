@@ -33,8 +33,22 @@ public class BoardDAOImp implements BoardDAO{
 	}
 
 	@Override
-	public List<UserDTO> boardlist() {
+	public List<BoardDTO> boardlist() {
 		return sqlSession.selectList("board.boardlist");
 	}
+
+	@Override
+	public void increaseHit(int idx) {
+		sqlSession.update("board.increaseView",idx);
+	}
+
+	@Override
+	public List<BoardDTO> read(int idx) {
+		System.out.println(idx);
+		System.out.println(sqlSession.selectList("board.read", idx));
+		return sqlSession.selectList("board.read", idx);
+	}
+
+
 
 }
