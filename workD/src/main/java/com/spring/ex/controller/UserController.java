@@ -47,7 +47,7 @@ public class UserController {
 		return "login/ex01";
 	}
 	
-	@RequestMapping(value = "emailCk", method = { RequestMethod.GET })
+	@RequestMapping("emailCk")
 	@ResponseBody 
 	public int idcheck(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String email) {
 	    int result = userService.emailChk(req.getParameter("email"));

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,13 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h2>¾ÆÀÌµğ Áßº¹°Ë»ç</h2>
+	<h2>ì•„ì´ë”” ì¤‘ë³µê²€ì‚¬</h2>
 	<table class="table table-bordered">
 		<tr>
-			<th>¾ÆÀÌµğ</th>
+			<th>ì•„ì´ë””</th>
 			<td><input type="text" name="email" id="email"
 				class="form-control" /> <input type="button" id="btnCheck"
-				value="N"> <span id="result"></span></td>
+				value="ì¤‘ë³µí™•ì¸"> <span id="result"></span></td>
 		</tr>
 	</table>
 
@@ -22,15 +22,15 @@
 	<script>
 		$('#btnCheck').click(function() {
 			if ($('#email').val() != '') {
-				// ¾ÆÀÌµğ¸¦ ¼­¹ö·Î Àü¼Û > DB À¯È¿¼º °Ë»ç > °á°ú ¹İÈ¯¹Ş±â
+				// ì•„ì´ë””ë¥¼ ì„œë²„ë¡œ ì „ì†¡ > DB ìœ íš¨ì„± ê²€ì‚¬ > ê²°ê³¼ ë°˜í™˜ë°›ê¸°
 				$.ajax({
 					type : 'GET',
 					url : 'http://localhost:8282/ex/emailCk?email='+$('#email').val(),
 					success : function(result) {
 						if (result == '0') {
-							$('#result').text('»ç¿ë °¡´ÉÇÑ ¾ÆÀÌµğÀÔ´Ï´Ù.');
+							$('#result').text('ì‚¬ìš© ê°€ëŠ¥í•œ ì•„ì´ë””ì…ë‹ˆë‹¤.');
 						} else {
-							$('#result').text('ÀÌ¹Ì »ç¿ëÁßÀÎ ¾ÆÀÌµğÀÔ´Ï´Ù.');
+							$('#result').text('ì´ë¯¸ ì‚¬ìš©ì¤‘ì¸ ì•„ì´ë””ì…ë‹ˆë‹¤.');
 						}
 					},
 					error : function(a, b, c) {
@@ -38,7 +38,7 @@
 					}
 				});
 			} else {
-				alert('emailÀ» ÀÔ·ÂÇÏ¼¼¿ä.');
+				alert('emailì„ ì…ë ¥í•˜ì„¸ìš”.');
 				$('#email').focus();
 			}
 		});
