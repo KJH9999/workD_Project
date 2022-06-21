@@ -49,6 +49,11 @@ public class BoardDAOImp implements BoardDAO{
 		return sqlSession.selectList("board.read", idx);
 	}
 
+	@Override
+	public void delete(int idx) {
+		sqlSession.delete("board.delete", idx);
+	}
+
 
 
 }

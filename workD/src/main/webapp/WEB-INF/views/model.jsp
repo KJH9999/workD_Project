@@ -17,10 +17,10 @@
 			<div>조회수 : ${boardlist.hit} </div>
 			<div>날짜 : ${boardlist.at_time} </div> <br/><br/><br/>
 			<div>내용 : ${boardlist.content} </div>
+		<a href="delete.do?idx=${boardlist.idx}">삭제하기</a>
 		</c:forEach>
-		
-		<a href="modifyboard">수정하기</a>
-		<a href="deleteboard" >삭제하기</a>
-		
+	<div>
+      <button onclick="history.back()">Back</button>
+    </div>
 </body>
 </html>

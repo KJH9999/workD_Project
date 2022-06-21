@@ -12,6 +12,5 @@
 <a href="join">회원가입 </a><br/><br/>
 <a href="userlist">회원모음</a><br/><br/>
 <a href="board">게시판</a><br/><br/>
-<a href="question">문의</a><br/><br/>
 </body>   
 </html>

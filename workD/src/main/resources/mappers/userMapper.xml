@@ -45,4 +45,9 @@
 		SET name = #{name}, number = #{num}
 		WHERE email = #{email}
 	</update>
+	
+	<select id="emailChk" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM user
+		WHERE email = #{email}
+	</select>
 </mapper>

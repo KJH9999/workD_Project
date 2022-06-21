@@ -18,5 +18,9 @@
 		PW : <input type="password" name="pw"><br/>
 		<input type="submit" value="UPDATE">
 	</form>
+	
+	    <div>
+      <button onclick="history.back()">Back</button>
+    </div>
 </body>
 </html>

@@ -4,18 +4,16 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.ex.dto.BoardDTO;
-import com.spring.ex.dto.UserDTO;
 import com.spring.ex.service.BoardService;
+import com.spring.ex.service.RegistService;
 
 @Controller
 public class BoardController {
@@ -28,7 +26,6 @@ public class BoardController {
 		List<BoardDTO> boardlist = boardService.boardList();
 		model.addAttribute("request", request);
 		model.addAttribute("boardlist", boardlist);
-		
 		return "board";
 	}
 
@@ -60,4 +57,14 @@ public class BoardController {
 		return "model";
 	}
 	
+	//삭제 본인이 쓴 글만 삭제 가능하도록 변경예정 (관리자모드용가능)
+	@RequestMapping("delete.do")
+	public String delete(@RequestParam int idx) {
+		System.out.println("delete");
+		boardService.delete(idx);
+		return "home";
+	}
+	
+	
+	//수정기능 만들것
 }

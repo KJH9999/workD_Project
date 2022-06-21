@@ -4,14 +4,20 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.javassist.bytecode.analysis.Analyzer;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.spring.ex.dto.RegistDTO;
 import com.spring.ex.dto.UserDTO;
-import com.spring.ex.service.BoardService;
+import com.spring.ex.service.RankingService;
+import com.spring.ex.service.RegistService;
 import com.spring.ex.service.UserService;
 
 @Controller
@@ -19,7 +25,13 @@ public class UserController {
 
 	@Inject
 	UserService userService;
+
+	@Inject
+	RegistService registService;
 	
+	@Inject
+	RankingService rankingService;
+
 	@RequestMapping("userlist")
 	public String userlist(Model model) {
 		System.out.println("UserService = " + userService);
@@ -27,12 +39,32 @@ public class UserController {
 		model.addAttribute("userlist", userlist);
 		return "user_list";
 	}
+	
 
+	@RequestMapping(value = "/login/ex01", method = { RequestMethod.GET })
+    public String ex01(HttpServletRequest req, HttpServletResponse resp, HttpSession session) {
+        System.out.println("ckck");
+		return "login/ex01";
+	}
+	
+	@RequestMapping(value = "emailCk", method = { RequestMethod.GET })
+	@ResponseBody 
+	public int idcheck(HttpServletRequest req, HttpServletResponse resp, HttpSession session, String email) {
+	    int result = userService.emailChk(req.getParameter("email"));
+	    System.out.println(result);
+	    return result; 
+	}
+	
 	@RequestMapping("home")
 	public String homew(Model model) {
 		return "home";
 	}
 
+	@RequestMapping("pay")
+	public String pay(Model model) {
+		return "pay";
+	}
+	
 	@RequestMapping("login")
 	public String login(Model model) {
 		return "login";
@@ -48,9 +80,11 @@ public class UserController {
 		System.out.println("loginOK: "+ email);
 		
 		List<UserDTO> userlist = userService.findname(email);
+		List<RegistDTO> day = registService.remainingday(email);
 		
 		model.addAttribute("request", request);
 		model.addAttribute("userlist", userlist);
+		model.addAttribute("day", day);
 
 		int ck = userService.loginUser(model);
 		System.out.println(ck);
@@ -76,6 +110,8 @@ public class UserController {
 		System.out.println("write()");
 		model.addAttribute("request", request);
 		userService.insertUser(model);
+		rankingService.insert(model);
+		registService.insert(model);
 		return "home";
 	}
 
@@ -117,7 +153,30 @@ public class UserController {
 		model.addAttribute("request", request);
 		userService.updateOther(model);
 		return "loginok";	
-		}
+	}
 
+	//regist
+	@RequestMapping("regist")
+	public String regist(HttpServletRequest request,Model model) {
+		System.out.println("regist()");
+		return "regist";
+	}
+	
+	@RequestMapping("registOk")
+	public String registOk(HttpServletRequest request,Model model) {
+		System.out.println("registOk()");
+		model.addAttribute("request", request);
+		registService.regist(model);
+		registService.start(model);
+		registService.end(model);
+		return "home";
+	}
+	
+	@RequestMapping("join3")
+	public String join3(HttpServletRequest request,Model model) {
+		System.out.println("join3()");
+		return "join3";
+	}
+	
 
 }

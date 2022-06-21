@@ -15,6 +15,10 @@
 		GENDER : <input type="text" name="gender" size="10"> <br/>
 		BIRTH_DATE : <input type="text" name="birth_date" size="10"> <br/>
 	<input type="submit" value="가입"> <input type="reset" value="취소">
+	
+	<div>
+      <button onclick="history.back()">Back</button>
+    </div>
 </form>
 </body>
 </html>

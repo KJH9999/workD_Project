@@ -12,7 +12,6 @@
 	<%
 		Object s_email = session.getAttribute("email");
 		String email = (String)s_email;
-		out.println("email : "+ email);
 	%>
 	
 	<table border="1">
@@ -40,10 +39,12 @@
 			<tr>
 				<td colspan="5"> <a href="writeview">글작성 </a></td>
 				<td colspan="5"> <a href="loginOk">뒤로가기 </a></td>
-				</tr>
+			</tr>
 	</table>
 	
-
+    <div>
+      <button onclick="history.back()">Back</button>
+    </div>
 
 </body>
 </html>

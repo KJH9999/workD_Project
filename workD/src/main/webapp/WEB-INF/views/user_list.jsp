@@ -16,5 +16,8 @@
 		${userlist.gender}
 		${userlist.birth_date}
 	</c:forEach>
+	    <div>
+      <button onclick="history.back()">Back</button>
+    </div>
 </body>
 </html>

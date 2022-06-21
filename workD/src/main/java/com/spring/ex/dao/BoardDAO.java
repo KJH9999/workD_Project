@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.spring.ex.dto.BoardDTO;
-import com.spring.ex.dto.UserDTO;
 
 @Repository
 public interface BoardDAO {
@@ -17,7 +16,7 @@ public interface BoardDAO {
 	public void increaseHit(int idx);
 	//상세내용
 	public List<BoardDTO> read(int idx);
-
-
-
+	//게시글삭제
+	public void delete(int idx);
+	
 }

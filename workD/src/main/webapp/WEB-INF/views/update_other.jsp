@@ -18,6 +18,10 @@
 	이름 : <input type="text" name = "name"><br/>
 	번호 : <input type="text" name = "num"><br/>
 	<input type="submit" value ="UPDATE">
+	
+	    <div>
+      <button onclick="history.back()">Back</button>
+    </div>
 </form>
 </body>
 </html>

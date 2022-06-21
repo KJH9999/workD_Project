@@ -21,5 +21,7 @@ public interface BoardService {
 	public List<BoardDTO> read(int idx);
 	//조회수 증가
 	void increaseViewcnt(int idx);
+	//게시글 삭제
+	public void delete(int idx);
 
 }

@@ -24,6 +24,8 @@ public interface UserService {
 	//정보수정
 	public void updateOther(Model model);
 	
+	public int emailChk(String email);
+	
 	
 	
 }

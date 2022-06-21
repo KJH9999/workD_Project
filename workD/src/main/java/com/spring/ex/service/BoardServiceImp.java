@@ -21,8 +21,6 @@ public class BoardServiceImp implements BoardService{
 
 	@Inject
 	BoardDAO boardDAO;
-	
-
 
 	@Override
 	public void insertBoard(Model model) {
@@ -53,6 +51,11 @@ public class BoardServiceImp implements BoardService{
 	public List<BoardDTO> read(int idx) {
 		System.out.println("read > s = "+idx);
 		return boardDAO.read(idx);
+	}
+
+	@Override
+	public void delete(int idx) {
+		boardDAO.delete(idx);
 	}
 
 

@@ -18,5 +18,9 @@
 
 <a href ="update_other">이름,번호 변경</a> <br/>
 
+    <div>
+      <button onclick="history.back()">Back</button>
+    </div>
+
 </body>
 </html>
